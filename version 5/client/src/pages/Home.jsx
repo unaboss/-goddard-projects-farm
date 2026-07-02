@@ -35,6 +35,7 @@ export default function Home() {
           style={{
             backgroundImage: `url('${img}')`,
             opacity: idx === current ? 1 : 0,
+            filter: 'contrast(1.15) saturate(1.1)',
           }}
         />
       ))}
