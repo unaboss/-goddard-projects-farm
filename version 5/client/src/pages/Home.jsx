@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { ArrowRight, Calendar, Tractor } from 'lucide-react'
+import { ArrowRight, Calendar, ChevronDown, Tractor } from 'lucide-react'
 
 import SeasonalAvailability from '../components/Home/SeasonalAvailability'
 import SeasonsVoting from '../components/Home/SeasonsVoting'
@@ -42,58 +42,45 @@ export default function Home() {
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at top left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 55%), radial-gradient(ellipse at bottom left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
+          background: `
+            radial-gradient(ellipse at top left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 65%),
+            radial-gradient(ellipse at bottom left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%),
+            radial-gradient(ellipse at bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%),
+            linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%)
+          `,
         }}
       />
 
-      <div className="absolute top-0 left-0 z-20 pt-3 md:pt-5 px-6 md:px-10 flex items-center gap-2">
+      <div className="absolute top-0 left-0 z-20 pt-3 md:pt-5 px-6 md:px-10 flex items-center gap-2.5">
         <img
           src="/images/symbol-logo.png"
           alt="Goddard Projects Farm"
-          className="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain border-3 border-gold-500"
+          className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain ring-2 ring-gold-500/80 shadow-md shadow-black/40"
         />
-        <div className="w-1 h-10 md:h-12 bg-forest rounded-full" />
-        <div className="-mt-1 md:-mt-2">
-          <span
-            className="text-white font-semibold text-base md:text-lg pb-0 font-poppins"
-            style={{ textShadow: '-0.1px -0.1px 0 rgba(217,197,160,0.6), 0.1px -0.1px 0 rgba(217,197,160,0.6), -0.1px 0.1px 0 rgba(217,197,160,0.6), 0.1px 0.1px 0 rgba(217,197,160,0.6), 0 2px 0 rgba(217,197,160,0.4)' }}
-          >
+        <div className="w-px h-8 md:h-10 bg-gradient-to-b from-gold-400/80 to-transparent rounded-full" />
+        <div className="leading-none">
+          <span className="block text-white font-semibold text-[13px] md:text-sm tracking-wide font-poppins text-shadow">
             Goddard Projects
           </span>
-          <span
-            className="block text-gold-400 font-semibold text-base md:text-lg -mt-2 md:-mt-3 font-poppins"
-            style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
-          >
+          <span className="block text-gold-400 font-bold text-base md:text-lg -mt-0.5 font-poppins text-shadow">
             Farm
           </span>
         </div>
       </div>
 
-      <div className="absolute top-1/2 -translate-y-12 md:-translate-y-20 right-0 w-full max-w-2xl z-20 flex flex-col items-start text-left px-6 md:px-10">
-        <h1
-          className="text-3xl md:text-6xl lg:text-7xl font-extrabold text-white/90 leading-tight mb-4 tracking-wide"
-          style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)' }}
-        >
+      <div className="absolute top-1/2 -translate-y-16 md:-translate-y-24 right-0 w-full max-w-2xl z-20 flex flex-col items-start text-left px-6 md:px-12">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-wide text-shadow-lg">
           From Our Soil<br />
-          <span className="text-4xl md:text-7xl lg:text-8xl">To Your Table</span>
+          <span className="text-4xl md:text-7xl lg:text-8xl text-gold-400 inline-block mt-1">To Your Table</span>
         </h1>
-        <div className="w-24 h-1 bg-gold-400 mb-4 rounded-full" />
-        <p
-          className="text-lg md:text-3xl text-gold-400 mb-2 font-semibold tracking-wide"
-          style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
-        >
+        <div className="w-20 h-1.5 bg-gradient-to-r from-gold-400 to-transparent mb-5 rounded-full" />
+        <p className="text-lg md:text-2xl text-white/90 mb-1.5 font-semibold tracking-wide text-shadow">
           Farming Made Better
         </p>
-        <p
-          className="text-xs md:text-base text-white mb-4 font-light uppercase tracking-[0.3em]"
-          style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
-        >
+        <p className="text-xs md:text-sm text-white/70 mb-5 font-light uppercase tracking-[0.35em] text-shadow">
           Since 2007
         </p>
-        <span
-          className="bg-gold-500 text-green-950 text-sm font-bold px-4 py-1.5 rounded-full"
-          style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.6)' }}
-        >
+        <span className="bg-gold-500/90 text-green-950 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full shadow-md shadow-black/30 backdrop-blur-sm">
           BBBEE Level 1
         </span>
       </div>
@@ -113,17 +100,24 @@ export default function Home() {
         <ArrowRight className="w-5 h-5 text-white" />
       </button>
 
-      <div className="absolute bottom-20 left-0 right-0 z-20 flex justify-center gap-2">
+      <div className="absolute bottom-24 left-0 right-0 z-20 flex justify-center gap-2.5">
         {heroImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-3 rounded-full transition-all duration-300 ${
-              idx === current ? 'bg-gold-500 w-8' : 'bg-white/50 hover:bg-white/80 w-3'
+            className={`rounded-full transition-all duration-300 ${
+              idx === current
+                ? 'bg-gold-500 w-8 h-3 shadow-[0_0_12px_rgba(201,146,42,0.5)]'
+                : 'bg-white/40 hover:bg-white/70 w-3 h-3'
             }`}
             aria-label={`Slide ${idx + 1}`}
           />
         ))}
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5 animate-bounce pointer-events-none">
+        <span className="text-white/50 text-[10px] md:text-xs tracking-[0.2em] uppercase font-light">Scroll</span>
+        <ChevronDown className="w-4 h-4 text-white/50" strokeWidth={1.5} />
       </div>
     </section>
 
