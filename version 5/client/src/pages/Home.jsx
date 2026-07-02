@@ -86,71 +86,42 @@ export default function Home() {
 
       {/* Connector lines */}
       <div
-        className="absolute left-[3%] z-10 w-[3px] pointer-events-none"
+        className="absolute left-[3%] z-10 w-[3px] pointer-events-none rounded-sm"
         style={{
           top: '11%',
           height: '52.5%',
-          background: 'linear-gradient(to bottom, #1E4D2B 0%, rgba(30,77,43,0.5) 100%)',
+          backgroundColor: '#1E4D2B',
         }}
       />
       <div
-        className="absolute [--logo-c:52px] md:[--logo-c:72px] top-[11%] z-10 h-[3px] pointer-events-none"
+        className="absolute [--logo-c:52px] md:[--logo-c:72px] top-[11%] z-10 h-[3px] pointer-events-none rounded-sm"
         style={{
-          left: 'min(3%, var(--logo-c))',
-          width: 'calc(max(3%, var(--logo-c)) - min(3%, var(--logo-c)))',
-          backgroundColor: 'rgba(30,77,43,0.8)',
+          left: 'calc(min(3%, var(--logo-c)) - 1px)',
+          width: 'calc(max(3%, var(--logo-c)) - min(3%, var(--logo-c)) + 2px)',
+          backgroundColor: '#1E4D2B',
         }}
       />
       <div
-        className="absolute [--logo-c:52px] md:[--logo-c:72px] top-[8%] z-10 w-[3px] pointer-events-none h-[3%]"
-        style={{ left: 'var(--logo-c)', backgroundColor: 'rgba(30,77,43,0.8)' }}
+        className="absolute [--logo-c:52px] md:[--logo-c:72px] z-10 w-[3px] pointer-events-none rounded-sm"
+        style={{
+          top: '9.5%',
+          height: 'calc(1.5% + 1px)',
+          left: 'var(--logo-c)',
+          backgroundColor: '#1E4D2B',
+        }}
       />
       {[25.5, 39.5, 51.5, 63.5].map((t) => (
         <div
           key={t}
-          className="absolute left-[3%] z-10 h-[3px] w-[1.5%] pointer-events-none"
-          style={{ top: t + '%', backgroundColor: 'rgba(30,77,43,0.7)' }}
-        />
-      ))}
-
-      {/* Junction dot — trunk + branch */}
-      <div
-        className="absolute z-10 rounded-full pointer-events-none"
-        style={{
-          left: 'calc(3% - 2px)',
-          top: 'calc(11% - 3px)',
-          width: '6px',
-          height: '6px',
-          backgroundColor: '#1E4D2B',
-        }}
-      />
-
-      {/* Dots at block connection points */}
-      {[25.5, 39.5, 51.5, 63.5].map((t) => (
-        <div
-          key={`dot-${t}`}
-          className="absolute z-10 rounded-full pointer-events-none"
+          className="absolute z-10 h-[3px] pointer-events-none rounded-sm"
           style={{
-            left: 'calc(4.5% - 3px)',
-            top: `calc(${t}% - 3px)`,
-            width: '6px',
-            height: '6px',
+            left: 'calc(3% - 1px)',
+            top: t + '%',
+            width: 'calc(1.5% + 1px)',
             backgroundColor: '#1E4D2B',
           }}
         />
       ))}
-
-      {/* Dot at stub top — under logo center */}
-      <div
-        className="absolute [--logo-c:52px] md:[--logo-c:72px] z-10 rounded-full pointer-events-none"
-        style={{
-          left: 'calc(var(--logo-c) - 2px)',
-          top: 'calc(8% - 3px)',
-          width: '6px',
-          height: '6px',
-          backgroundColor: '#1E4D2B',
-        }}
-      />
 
       {/* #1 top-left block */}
       <div className="absolute top-[24%] left-[4%] z-20 max-w-[140px] md:max-w-[180px]">
