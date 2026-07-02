@@ -28,12 +28,12 @@ export default function Navbar() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed top-5 right-5 z-[60] p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ${
-          open ? 'bg-white/20 text-white' : 'bg-white/10 hover:bg-white/20 text-white'
+        className={`fixed top-5 right-5 z-[60] p-2.5 rounded-lg shadow-md transition-all duration-200 ${
+          open ? 'bg-black/40 text-white' : 'bg-black/30 hover:bg-black/45 text-white'
         }`}
         aria-label={open ? 'Close menu' : 'Open menu'}
       >
-        {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
 
       {open && (
