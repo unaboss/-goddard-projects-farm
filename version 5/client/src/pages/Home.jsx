@@ -125,7 +125,7 @@ export default function Home() {
 
       {/* #1 top-left block */}
       <div className="absolute top-[20%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[3].tag}
         </span>
         <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
@@ -135,8 +135,8 @@ export default function Home() {
       </div>
 
       {/* #3 — left side column */}
-      <div className="absolute top-[37%] left-[4%] z-20 max-w-[clamp(130px,26vw,220px)]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[37%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[2].tag}
         </span>
         <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
@@ -167,7 +167,7 @@ export default function Home() {
 
       {/* #6 — below the people block (left of headline) */}
       <div className="absolute top-[54%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[5].tag}
         </span>
         <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
@@ -178,7 +178,7 @@ export default function Home() {
 
       {/* #5 — left side column */}
       <div className="absolute top-[71%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[4].tag}
         </span>
         <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
