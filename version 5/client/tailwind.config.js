@@ -36,6 +36,9 @@ export default {
         sans: ['Nunito', 'system-ui', 'sans-serif'],
         serif: ['Georgia', 'serif'],
         poppins: ['Poppins', 'sans-serif'],
+        bebas: ['Bebas Neue', 'sans-serif'],
+        'league-spartan': ['League Spartan', 'sans-serif'],
+        oswald: ['Oswald', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

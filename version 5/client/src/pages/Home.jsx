@@ -21,7 +21,7 @@ const blocks = [
   { tag: 'Inside The Greenhouse', title: 'Protected Growing\nFor Better Quality', sub: 'Year-round consistency from our shade-net system.' },
   { tag: 'Made Better Together', title: 'Rooted In\nThe Land', sub: 'Chief Ravele\u2019s land in Dzwerani since 2007.' },
   { tag: 'Harvest Season', title: 'Beyond\nJust Tomatoes', sub: '32 cattle, 42 sheep, seasonal vegetables.' },
-  { tag: 'BBBEE Level 1', title: 'Farming Made\nBetter Together', sub: 'Empowering Vhembe through jobs and skills.' },
+  { tag: 'BBBEE Level 1', title: 'From Our Soil\nTo Your Table', sub: 'Empowering Vhembe through jobs and skills.' },
 ]
 
 export default function Home() {
@@ -79,8 +79,19 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <p className="text-sm md:text-base text-white/60 mt-3 ml-[72px] md:ml-[80px] font-light uppercase tracking-[0.15em] text-shadow">
-          Farming Made Better
+        {/* BACKGROUND TEXT — "Farming Made Better" watermark */}
+        <p
+          className="absolute top-24 md:top-28 left-[185px] md:left-[250px] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
+          style={{
+            fontWeight: 400,
+            fontSize: '100px',
+            lineHeight: 0.82,
+            color: '#ffffff',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
+            maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
+          }}
+        >
+          Farming<br />Made<br />Better
         </p>
       </div>
 
@@ -146,16 +157,16 @@ export default function Home() {
       </div>
 
       {/* #4 HEADLINE — center, large */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-[58%] md:left-[56%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-wide text-shadow-lg whitespace-pre-line drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ textWrap: 'balance' }}>
+      <div className="absolute top-[49%] left-[58%] md:left-[56%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-wide text-shadow whitespace-pre-line drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)] font-oswald" style={{ textWrap: 'balance' }}>
           {blocks[6].title.split('\n').map((line, j) =>
             j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
           )}
         </h1>
-        <p className="text-sm md:text-base text-green-100 mt-3 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px]">
+        <p className="text-sm md:text-base text-green-100 mt-5 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px]">
           {blocks[6].sub}
         </p>
-        <div className="mt-4 space-y-1.5">
+        <div className="mt-6 space-y-2.5">
           <p className="text-sm md:text-base text-green-200/70 font-light uppercase tracking-[0.3em] text-shadow">
             Since 2007
           </p>
