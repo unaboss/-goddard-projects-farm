@@ -37,13 +37,13 @@ const products = [
 export default function Products() {
   return (
     <main className="pt-16">
-      <section className="relative py-20 md:py-28 bg-forest overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-forest overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border-8 border-white" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border-8 border-gold-500" />
         </div>
         <div className="container-custom relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textWrap: 'balance' }}>Our Products</h1>
           <p className="text-green-100 text-lg max-w-2xl mx-auto">
             Quality livestock and fresh produce from our farm in Thohoyandou, Limpopo.
           </p>
@@ -51,28 +51,28 @@ export default function Products() {
       </section>
 
       <section className="section-padding">
-        <div className="container-custom space-y-16">
+        <div className="container-custom space-y-24">
           {products.map((product, idx) => (
             <div
               key={product.title}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-16 items-center ${
                 idx % 2 === 1 ? 'lg:[direction:rtl]' : ''
               }`}
             >
               <div className={idx % 2 === 1 ? 'lg:[direction:ltr]' : ''}>
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-4 mb-5">
                   <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center">
                     <product.icon className="w-6 h-6 text-forest" />
                   </div>
-                  <h2 className="text-3xl font-bold text-forest">{product.title}</h2>
+                  <h2 className="text-3xl font-bold text-forest" style={{ textWrap: 'balance' }}>{product.title}</h2>
                 </div>
-                <div className="mb-4">
+                <div className="mb-5">
                   <span className="text-2xl font-bold text-gold-600">{product.price}</span>
                   <span className="text-gray-500 text-sm ml-2">{product.unit}</span>
                 </div>
-                <p className="text-sm text-forest/60 font-medium mb-2">{product.stock}</p>
-                <p className="text-gray-600 leading-relaxed mb-6">{product.desc}</p>
-                <ul className="grid grid-cols-2 gap-2 mb-6">
+                <p className="text-sm text-forest/60 font-medium mb-3">{product.stock}</p>
+                <p className="text-gray-600 leading-relaxed mb-8">{product.desc}</p>
+                <ul className="grid grid-cols-2 gap-3 mb-8">
                   {product.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-gray-700">
                       <span className="w-1.5 h-1.5 bg-forest rounded-full flex-shrink-0" />
@@ -97,15 +97,15 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="py-16 bg-forest">
+      <section className="py-20 bg-forest">
         <div className="container-custom text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-5" style={{ textWrap: 'balance' }}>
             Need pricing or bulk orders?
           </h2>
-          <p className="text-green-100 mb-8 max-w-xl mx-auto">
+          <p className="text-green-100 mb-10 max-w-xl mx-auto">
             Availability changes with the seasons. Contact us for current stock and pricing information.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-5 justify-center">
             <Link to="/contact" className="btn-gold px-8 py-3">
               Get In Touch
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -28,7 +28,7 @@ export default function Navbar() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed top-5 right-5 z-[60] p-2.5 rounded-lg shadow-md transition-all duration-200 ${
+        className={`fixed top-5 right-5 z-[60] p-3 rounded-lg shadow-md transition-all duration-200 ${
           open ? 'bg-black/40 text-white' : 'bg-black/30 hover:bg-black/45 text-white'
         }`}
         aria-label={open ? 'Close menu' : 'Open menu'}

@@ -33,13 +33,17 @@ export default function SeasonsVoting() {
   }
 
   return (
-    <section className="py-16 bg-[#241E18]">
+    <section className="py-20 bg-[#241E18]">
       <div className="container-custom max-w-2xl">
-        <div className="text-center mb-8">
-          <p className="text-[#C8A951] font-semibold uppercase tracking-[0.3em] text-xs mb-3">
-            Have Your Say
-          </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#C8A951]">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="w-8 h-px bg-[#C8A951]/60" />
+            <span className="text-[#C8A951] text-sm font-medium">
+              Community Poll
+            </span>
+            <span className="w-8 h-px bg-[#C8A951]/60" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#C8A951]" style={{ textWrap: 'balance' }}>
             What's Growing This Season?
           </h2>
           <p className="text-[#A89880] mt-3 text-sm">

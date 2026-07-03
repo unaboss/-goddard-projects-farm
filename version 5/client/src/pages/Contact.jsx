@@ -48,13 +48,13 @@ export default function Contact() {
 
   return (
     <main className="pt-16">
-      <section className="relative py-20 md:py-28 bg-forest overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-forest overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border-8 border-white" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border-8 border-gold-500" />
         </div>
         <div className="container-custom relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textWrap: 'balance' }}>Get In Touch</h1>
           <p className="text-green-100 text-lg max-w-2xl mx-auto">
             Interested in sourcing from us? Reach out and we&apos;ll get back to you promptly.
           </p>
@@ -63,11 +63,11 @@ export default function Contact() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-16">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-2xl font-bold text-forest mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-forest mb-8" style={{ textWrap: 'balance' }}>Contact Information</h2>
               {contactItems.map((item) => (
-                <div key={item.title} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm">
+                <div key={item.title} className="flex gap-5 p-5 bg-white rounded-xl shadow-sm">
                   <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-6 h-6 text-forest" />
                   </div>
@@ -95,9 +95,9 @@ export default function Contact() {
             </div>
 
             <div className="lg:col-span-3">
-              <h2 className="text-2xl font-bold text-forest mb-6">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-md p-6 md:p-8 space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
+              <h2 className="text-2xl font-bold text-forest mb-8" style={{ textWrap: 'balance' }}>Send a Message</h2>
+              <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-md p-8 md:p-10 space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Name <span className="text-red-500">*</span>
@@ -129,7 +129,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Phone
@@ -201,10 +201,10 @@ export default function Contact() {
       </section>
 
       {/* WHATSAPP CTA */}
-      <section className="py-16 bg-green-50">
+      <section className="py-20 bg-green-50">
         <div className="container-custom text-center">
-          <h2 className="text-2xl font-bold text-forest mb-4">Prefer WhatsApp?</h2>
-          <p className="text-gray-600 mb-6">Chat with us directly on WhatsApp for quick enquiries.</p>
+          <h2 className="text-2xl font-bold text-forest mb-5" style={{ textWrap: 'balance' }}>Prefer WhatsApp?</h2>
+          <p className="text-gray-600 mb-8">Chat with us directly on WhatsApp for quick enquiries.</p>
           <a
             href="https://wa.me/27820406558?text=Hi%2C%20I'm%20interested%20in%20sourcing%20from%20Goddard%20Projects%20Farm."
             target="_blank"

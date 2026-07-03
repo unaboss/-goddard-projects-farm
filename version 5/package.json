@@ -10,6 +10,7 @@
     "start": "npm start --prefix server"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "impeccable": "^2.3.2"
   }
 }

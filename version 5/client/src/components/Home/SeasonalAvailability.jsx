@@ -21,13 +21,13 @@ const labels = {
 
 export default function SeasonalAvailability() {
   return (
-    <section className="py-16 bg-forest">
+    <section className="py-20 bg-forest">
       <div className="container-custom">
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <p className="text-gold-400 font-semibold uppercase tracking-[0.3em] text-xs mb-3">
             Live Updates
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white" style={{ textWrap: 'balance' }}>
             What's Available Right Now
           </h2>
           <p className="text-green-300 mt-3 text-sm">

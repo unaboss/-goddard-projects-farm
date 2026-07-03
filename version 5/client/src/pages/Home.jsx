@@ -19,8 +19,8 @@ const blocks = [
   { tag: 'Harvest Season', title: 'Every Tomato\nHand-Picked', sub: 'No shortcuts, no compromises. Fresh for Limpopo.' },
   { tag: 'Our Team', title: 'The People Behind\nYour Food', sub: 'Local farmers committed to sustainable agriculture.' },
   { tag: 'Inside The Greenhouse', title: 'Protected Growing\nFor Better Quality', sub: 'Year-round consistency from our shade-net system.' },
-  { tag: 'From Our Soil', title: 'Rooted In\nThe Land', sub: 'Chief Ravele\u2019s land in Dzwerani since 2007.' },
-  { tag: 'Livestock & Produce', title: 'Beyond\nJust Tomatoes', sub: '32 cattle, 42 sheep, seasonal vegetables.' },
+  { tag: 'Made Better Together', title: 'Rooted In\nThe Land', sub: 'Chief Ravele\u2019s land in Dzwerani since 2007.' },
+  { tag: 'Harvest Season', title: 'Beyond\nJust Tomatoes', sub: '32 cattle, 42 sheep, seasonal vegetables.' },
   { tag: 'BBBEE Level 1', title: 'Farming Made\nBetter Together', sub: 'Empowering Vhembe through jobs and skills.' },
 ]
 
@@ -62,7 +62,7 @@ export default function Home() {
       />
 
       {/* Logo Lockup — top-left */}
-      <div className="absolute top-0 left-0 z-20 pt-5 md:pt-7 px-6 md:px-10">
+      <div className="absolute top-0 left-0 z-20 pt-6 md:pt-8 px-6 md:px-10">
         <div className="flex items-start gap-2.5">
           <img
             src="/images/symbol-logo.png"
@@ -110,7 +110,7 @@ export default function Home() {
           backgroundColor: '#1E4D2B',
         }}
       />
-      {[25.5, 39.5, 51.5, 63.5].map((t) => (
+      {[21.5, 38.5, 55.5, 72.5].map((t) => (
         <div
           key={t}
           className="absolute z-10 h-[3px] pointer-events-none rounded-sm"
@@ -124,41 +124,39 @@ export default function Home() {
       ))}
 
       {/* #1 top-left block */}
-      <div className="absolute top-[24%] left-[4%] z-20 max-w-[140px] md:max-w-[180px]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-1 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[20%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[3].tag}
         </span>
-        <h2 className="text-[10px] md:text-xs font-semibold text-white leading-tight tracking-wide text-shadow whitespace-pre-line">
-          {blocks[3].title.split('\n').map((line, j) =>
-              j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
-          )}
-        </h2>
+        <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
+          <strong className="text-green-50">Protected growing for better quality.</strong>{' '}
+          <span className="text-green-200/80">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
+        </p>
       </div>
 
       {/* #3 — left side column */}
-      <div className="absolute top-[38%] left-[4%] z-20 max-w-[140px] md:max-w-[200px]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-1 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[37%] left-[4%] z-20 max-w-[clamp(130px,26vw,220px)]">
+        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[2].tag}
         </span>
-        <h2 className="text-[10px] md:text-xs font-semibold text-white leading-tight tracking-wide text-shadow whitespace-pre-line">
-          {blocks[2].title.split('\n').map((line, j) =>
-            j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
-          )}
-        </h2>
+        <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
+          <strong className="text-green-50">Proudly South African —</strong>{' '}
+          <span className="text-green-200/80">every hand on this farm is local. Providing jobs and skills to the Vhembe community.</span>
+        </p>
       </div>
 
       {/* #4 HEADLINE — center, large */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-[52%] md:left-[53%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-wide text-shadow-lg whitespace-pre-line drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+      <div className="absolute top-1/2 -translate-y-1/2 left-[58%] md:left-[56%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-wide text-shadow-lg whitespace-pre-line drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ textWrap: 'balance' }}>
           {blocks[6].title.split('\n').map((line, j) =>
             j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
           )}
         </h1>
-        <p className="text-sm md:text-base text-white/70 mt-2 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px]">
+        <p className="text-sm md:text-base text-green-100 mt-3 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px]">
           {blocks[6].sub}
         </p>
-        <div className="mt-3 space-y-1">
-          <p className="text-sm md:text-base text-white/60 font-light uppercase tracking-[0.3em] text-shadow">
+        <div className="mt-4 space-y-1.5">
+          <p className="text-sm md:text-base text-green-200/70 font-light uppercase tracking-[0.3em] text-shadow">
             Since 2007
           </p>
           <span className="inline-block bg-gold-500/90 text-green-950 text-xs md:text-sm font-bold px-4 py-1 rounded-full shadow-md shadow-black/30 backdrop-blur-sm">
@@ -167,28 +165,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* #5 — left side column */}
-      <div className="absolute top-[62%] left-[4%] z-20 max-w-[140px] md:max-w-[180px]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-1 shadow-sm shadow-black/30 border border-green-900">
-          {blocks[4].tag}
-        </span>
-        <h2 className="text-[10px] md:text-xs font-semibold text-white leading-tight tracking-wide text-shadow whitespace-pre-line">
-          {blocks[4].title.split('\n').map((line, j) =>
-              j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
-          )}
-        </h2>
-      </div>
-
       {/* #6 — below the people block (left of headline) */}
-      <div className="absolute top-[50%] left-[4%] z-20 max-w-[140px] md:max-w-[180px]">
-        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-1 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[54%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
           {blocks[5].tag}
         </span>
-        <h2 className="text-[10px] md:text-xs font-semibold text-white leading-tight tracking-wide text-shadow whitespace-pre-line">
-          {blocks[5].title.split('\n').map((line, j) =>
-            j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
-          )}
-        </h2>
+        <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
+          <strong className="text-green-50">Grown to your demand.</strong>{' '}
+          <span className="text-green-200/80">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
+        </p>
+      </div>
+
+      {/* #5 — left side column */}
+      <div className="absolute top-[71%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="inline-block bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+          {blocks[4].tag}
+        </span>
+        <p className="text-[clamp(10px,2.2vw,12px)] leading-relaxed tracking-wide text-shadow">
+          <strong className="text-green-50">BBBEE Level 1 certified.</strong>{' '}
+          <span className="text-green-200/80">Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
+        </p>
       </div>
 
       {/* Arrows */}
@@ -224,31 +220,31 @@ export default function Home() {
       </div>
 
       {/* Scroll hint */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 animate-bounce pointer-events-none">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-none opacity-0 animate-[fadeIn_0.3s_4s_ease-out_forwards]">
         <ChevronDown className="w-4 h-4 text-white/50" strokeWidth={1.5} />
       </div>
     </section>
 
     <section className="section-padding bg-cream">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-forest mb-6">About the Farm</h2>
-            <blockquote className="text-xl md:text-2xl italic text-forest/70 border-l-4 border-gold-500 pl-4 my-6 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-forest mb-8" style={{ textWrap: 'balance' }}>About the Farm</h2>
+            <blockquote className="text-xl md:text-2xl italic text-forest/70 border-l-4 border-gold-500 pl-6 my-8 leading-relaxed">
               &ldquo;We believe there is no life without food. Healthy, clean food is the foundation of a healthy community.&rdquo;
             </blockquote>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 leading-relaxed mb-5">
               The farm operates on land allocated by Chief Ravele of Dzwerani/Manamane.
               For over 19 years, Goddard Projects Farm has supplied fresh produce and livestock
               from the Thohoyandou region of Limpopo to wholesalers and grocery stores.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-10">
               Established in 2007, the farm has grown steadily from a small family operation
               into a trusted B2B supplier. Every head of cattle, every sheep, and every crop
               is raised with the same commitment to quality that has defined the farm from day one.
             </p>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-5">
               {[
                 { icon: Calendar, number: '2007', label: 'Established' },
                 { icon: Tractor, number: '32', label: 'Head of Cattle' },

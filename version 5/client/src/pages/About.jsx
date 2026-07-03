@@ -11,13 +11,13 @@ export default function About() {
   return (
     <main className="pt-16">
       {/* HERO */}
-      <section className="relative py-20 md:py-28 bg-forest overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-forest overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-64 h-64 rounded-full border-8 border-white" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full border-8 border-gold-500" />
         </div>
         <div className="container-custom relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About Our Farm</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textWrap: 'balance' }}>About Our Farm</h1>
           <p className="text-green-100 text-lg max-w-2xl mx-auto">
             Over 19 years of supplying fresh produce and livestock from the Thohoyandou region of Limpopo.
           </p>
@@ -25,13 +25,13 @@ export default function About() {
       </section>
 
       {/* STATS */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center p-6 bg-cream rounded-2xl">
-                <stat.icon className="w-8 h-8 text-forest mx-auto mb-3" />
-                <div className="text-3xl font-bold text-forest mb-1">{stat.number}</div>
+              <div key={stat.label} className="text-center p-8 bg-cream rounded-2xl">
+                <stat.icon className="w-8 h-8 text-forest mx-auto mb-4" />
+                <div className="text-3xl font-bold text-forest mb-2">{stat.number}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -42,25 +42,25 @@ export default function About() {
       {/* STORY */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <img
                 src="/images/gallery/farm-02.jpeg"
                 alt="Goddard Projects Farm"
-                className="rounded-2xl shadow-lg w-full h-80 object-cover"
+                className="rounded-2xl shadow-lg w-full h-96 object-cover"
               />
             </div>
             <div>
-              <h2 className="section-title">Our Story</h2>
-              <blockquote className="text-xl italic text-forest/80 border-l-4 border-gold-500 pl-4 my-6">
+              <h2 className="section-title" style={{ textWrap: 'balance' }}>Our Story</h2>
+              <blockquote className="text-xl italic text-forest/80 border-l-4 border-gold-500 pl-6 my-8">
                 &ldquo;We believe there is no life without food. Healthy, clean food is the foundation of a healthy community.&rdquo;
               </blockquote>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-5">
                 The farm operates on land allocated by Chief Ravele of Dzwerani/Manamane. Since 2007,
                 Goddard Projects Farm has been dedicated to producing quality livestock and fresh vegetables
                 for wholesalers and grocery stores across the region.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-5">
                 What began as a small family operation has grown into a trusted B2B supplier. Every head of
                 cattle, every sheep, and every crop is raised with the same commitment to quality that has
                 defined the farm from day one.
@@ -77,14 +77,14 @@ export default function About() {
       {/* LOCATION */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="section-title">Our Location</h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <h2 className="section-title" style={{ textWrap: 'balance' }}>Our Location</h2>
+              <p className="text-gray-600 leading-relaxed mb-8">
                 We are located in the Thohoyandou region of Limpopo, strategically positioned to serve
                 wholesalers and grocery stores throughout the province and beyond.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-forest flex-shrink-0 mt-0.5" />
                   <div>
