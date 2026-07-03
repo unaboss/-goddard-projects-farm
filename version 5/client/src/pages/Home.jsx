@@ -67,7 +67,7 @@ export default function Home() {
           <img
             src="/images/symbol-logo.png"
             alt="Goddard Projects Farm"
-            className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain shadow-md shadow-black/40"
+            className="w-14 h-14 md:w-16 md:h-16 object-contain"
           />
           <div className="w-px h-10 md:h-12 bg-gradient-to-b from-gold-400/80 to-transparent rounded-full mt-1" />
           <div className="leading-none mt-4">
@@ -85,7 +85,7 @@ export default function Home() {
           style={{
             fontWeight: 400,
             fontSize: '100px',
-            lineHeight: 0.82,
+            lineHeight: 0.78,
             color: '#ffffff',
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
             maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
@@ -100,7 +100,7 @@ export default function Home() {
         className="absolute left-[3%] z-10 w-[3px] pointer-events-none rounded-sm"
         style={{
           top: '11%',
-          height: '52.5%',
+          height: '63.5%',
           backgroundColor: '#1E4D2B',
         }}
       />
@@ -113,10 +113,9 @@ export default function Home() {
         }}
       />
       <div
-        className="absolute [--logo-c:52px] md:[--logo-c:72px] z-10 w-[3px] pointer-events-none rounded-sm"
+        className="absolute [--logo-c:52px] md:[--logo-c:72px] z-10 w-[3px] pointer-events-none rounded-sm h-[calc(11%-52px)] md:h-[calc(11%-64px)]"
         style={{
-          top: '9.5%',
-          height: 'calc(1.5% + 1px)',
+          bottom: '11%',
           left: 'var(--logo-c)',
           backgroundColor: '#1E4D2B',
         }}
