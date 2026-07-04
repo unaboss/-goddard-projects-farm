@@ -53,7 +53,7 @@ export default function Home() {
     const logoCy = (logoY / vpH) * 100
     const bridgeY = 14
     const mainX = 3
-    const bottomY = 80
+    const bottomY = 65
     const tickEnd = mainX + 1.5
     return {
       path: `${logoCx.toFixed(2)},${logoCy.toFixed(2)} ${logoCx.toFixed(2)},${bridgeY} ${mainX},${bridgeY} ${mainX},${bottomY}`,
@@ -97,10 +97,10 @@ export default function Home() {
           />
           <div className="w-px h-14 md:h-16 bg-gradient-to-b from-gold-400/80 to-transparent rounded-full mt-1" />
           <div className="leading-none mt-4">
-            <span className="block text-white font-normal text-sm md:text-base tracking-wide font-poppins text-shadow">
+            <span className="block text-white font-normal text-sm md:text-base tracking-wide font-bebas text-shadow">
               Goddard Projects
             </span>
-            <span className="block text-gold-400 font-bold text-[10px] md:text-xs -mt-0.5 font-poppins text-shadow">
+            <span className="block text-gold-400 font-bold text-[10px] md:text-xs -mt-0.5 font-bebas text-shadow">
               Farm
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function Home() {
           strokeLinejoin="round"
         />
         {/* Tick marks branching from vertical line toward left blocks */}
-        {[21.5, 40.5, 59.5, 78.5].map((t) => (
+        {[23.5, 41.5, 61.5].map((t) => (
           <line
             key={t}
             x1="3"
@@ -153,39 +153,39 @@ export default function Home() {
       </svg>
 
       {/* #1 top-left block */}
-      <div className="absolute top-[20%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[22%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
           {blocks[3].tag}
         </span>
-        <p className="text-[clamp(8px,1.8vw,10px)] leading-tight tracking-wide text-shadow">
+        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
           <strong className="text-green-50">Protected growing for better quality.</strong>{' '}
-          <span className="text-green-200/80">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
+          <span className="text-white/70">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
         </p>
       </div>
 
       {/* #3 — left side column */}
-      <div className="absolute top-[39%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+      <div className="absolute top-[40%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
           {blocks[2].tag}
         </span>
-        <p className="text-[clamp(8px,1.8vw,10px)] leading-tight tracking-wide text-shadow">
+        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
           <strong className="text-green-50">Proudly South African —</strong>{' '}
-          <span className="text-green-200/80">every hand on this farm is local. Providing jobs and skills to the Vhembe community.</span>
+          <span className="text-white/70">every hand on this farm is local. Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
         </p>
       </div>
 
       {/* #4 HEADLINE — center, large */}
-      <div className="absolute top-[49%] left-[58%] md:left-[56%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
+      <div className="absolute top-[42%] left-[62%] md:left-[60%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-wide text-shadow whitespace-pre-line drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)] font-oswald" style={{ textWrap: 'balance' }}>
           {blocks[6].title.split('\n').map((line, j) =>
             j === 0 ? line : <span key={j} className="text-gold-400/80 block">{line}</span>
           )}
         </h1>
-        <p className="text-sm md:text-base text-green-100 mt-5 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px]">
+        <p className="text-sm md:text-base text-green-100 mt-3 leading-relaxed text-shadow max-w-[360px] md:max-w-[560px] font-medium">
           {blocks[6].sub}
         </p>
-        <div className="mt-6 space-y-2.5">
-          <p className="text-sm md:text-base text-green-200/70 font-light uppercase tracking-[0.3em] text-shadow">
+        <div className="mt-5 space-y-1.5">
+          <p className="text-sm md:text-base text-green-200/70 font-normal uppercase tracking-[0.3em] text-shadow">
             Since 2007
           </p>
           <span className="inline-block bg-gold-500/90 text-green-950 text-xs md:text-sm font-bold px-4 py-1 rounded-full shadow-md shadow-black/30 backdrop-blur-sm">
@@ -194,25 +194,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* #6 — below the people block (left of headline) */}
-      <div className="absolute top-[58%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
+      {/* #6 — left side column */}
+      <div className="absolute top-[60%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
+        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
           {blocks[5].tag}
         </span>
-        <p className="text-[clamp(8px,1.8vw,10px)] leading-tight tracking-wide text-shadow">
+        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
           <strong className="text-green-50">Grown to your demand.</strong>{' '}
-          <span className="text-green-200/80">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
-        </p>
-      </div>
-
-      {/* #5 — left side column */}
-      <div className="absolute top-[77%] left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-gradient-to-r from-green-900/35 to-gold-600/30 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2 shadow-sm shadow-black/30 border border-green-900">
-          {blocks[4].tag}
-        </span>
-        <p className="text-[clamp(8px,1.8vw,10px)] leading-tight tracking-wide text-shadow">
-          <strong className="text-green-50">BBBEE Level 1 certified.</strong>{' '}
-          <span className="text-green-200/80">Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
+          <span className="text-white/70">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
         </p>
       </div>
 

@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process -Id 1508 -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -Confirm:$false)",
+      "Bash(where psql *)",
+      "Bash(where pg_ctl)",
+      "PowerShell(winget --version)",
+      "PowerShell(choco --version 2>$null)",
+      "PowerShell(winget install -e --id PostgreSQL.PostgreSQL.17 --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell(choco install postgresql17 -y --params '/Password:postgres' 2>&1)",
+      "PowerShell(mysql --version)",
+      "PowerShell(mysql -u root -e \"SHOW DATABASES;\" 2>&1)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" -e \"SHOW DATABASES;\" 2>&1)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" -e \"CREATE DATABASE IF NOT EXISTS goddard_projects CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\" 2>&1)",
+      "PowerShell([System.Convert]::ToBase64String\\(\\(1..48 | ForEach-Object { Get-Random -Maximum 256 }\\)\\) ; [System.Convert]::ToBase64String\\(\\(1..48 | ForEach-Object { Get-Random -Maximum 256 }\\)\\))",
+      "Bash(npm uninstall *)",
+      "Bash(npm install *)",
+      "Bash(grep -i \"^pg$\")",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" goddard_projects 2>&1)",
+      "Bash(curl -s http://localhost:5000/api/health)",
+      "Bash(curl -s \"http://localhost:5000/api/products?limit=3\")",
+      "Bash(curl -s \"http://localhost:5000/api/products?limit=6&availability=all\")",
+      "Bash(curl -s \"http://localhost:5000/api/testimonials?limit=3&approved=true\")",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" goddard_projects --default-character-set=utf8mb4 -e \"UPDATE products SET description='Large, firm cabbage heads - versatile for all types of cooking.' WHERE name='Cabbage';\" 2>&1)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" goddard_projects --default-character-set=utf8mb4 2>&1)",
+      "Bash(curl -s \"http://localhost:5000/api/products?category=vegetable\")",
+      "PowerShell([Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $OutputEncoding = [System.Text.Encoding]::UTF8; Get-Content -Raw -Encoding UTF8 \"C:\\\\Users\\\\Davina\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Davina-OneDrive---Sol-Plaatje-University-Desktop-FARM-PROJECT\\\\81901ab1-6e7c-4234-9c65-fb1c7787f0af\\\\scratchpad\\\\fix_cabbage.sql\" | & \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" goddard_projects --default-character-set=utf8mb4 2>&1)",
+      "PowerShell([Console]::OutputEncoding = New-Object System.Text.UTF8Encoding $false; $OutputEncoding = New-Object System.Text.UTF8Encoding $false; $sql = [System.IO.File]::ReadAllText\\(\"C:\\\\Users\\\\Davina\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Davina-OneDrive---Sol-Plaatje-University-Desktop-FARM-PROJECT\\\\81901ab1-6e7c-4234-9c65-fb1c7787f0af\\\\scratchpad\\\\fix_cabbage.sql\"\\).TrimStart\\([char]0xFEFF\\); $sql | & \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" goddard_projects --default-character-set=utf8mb4 2>&1)",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" -D goddard_projects -e \"SELECT id, name, email, role, password FROM users;\")",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" -D goddard_projects -e \"SELECT id, name, email, role FROM users;\")",
+      "Bash(node -e ' *)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root -pChelsyTinevimbo@2003 -D goddard_projects -e ' *)",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -u root -p\"ChelsyTinevimbo@2003\" -D goddard_projects -e \"SHOW CREATE TABLE users\\\\G\")",
+      "Bash(gh repo *)",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -h reseau.proxy.rlwy.net -P 48282 -u root -p\"BhxEpjLzoKXBiRHHocbvfUWofRNhzvkd\" railway -e \"SELECT 1;\")",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -h reseau.proxy.rlwy.net -P 48282 -u root -p\"BhxEpjLzoKXBiRHHocbvfUWofRNhzvkd\" railway)",
+      "Bash(\"/c/xampp/mysql/bin/mysql.exe\" -h reseau.proxy.rlwy.net -P 48282 -u root -p\"BhxEpjLzoKXBiRHHocbvfUWofRNhzvkd\" railway -e \"SHOW TABLES; SELECT COUNT\\(*\\) as products FROM products;\")",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -h reseau.proxy.rlwy.net -P 48282 -u root -pBhxEpjLzoKXBiRHHocbvfUWofRNhzvkd railway -e ' *)"
+    ]
+  }
+}
