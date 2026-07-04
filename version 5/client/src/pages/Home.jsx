@@ -137,15 +137,14 @@ export default function Home() {
 
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
-          {/* L-connector: vertical line + junction dot + fading tick */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ width: '5vw', transform: 'translateX(-100%)' }}>
-            <div className="absolute left-full top-0 w-px h-2 bg-green-700/60" />
-            <div className="absolute left-full top-2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
-            <div className="absolute left-0 top-2 w-full h-px bg-gradient-to-l from-green-700/60 to-transparent" />
+          {/* Option C: tick → dot → badge (single visual flow) */}
+          <div className="absolute left-0 top-0 flex items-center pointer-events-none" style={{ paddingLeft: '5vw' }}>
+            <div className="absolute left-0 top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
+            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
+            <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
+              {blocks[3].tag}
+            </span>
           </div>
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
-            {blocks[3].tag}
-          </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
             <strong className="text-green-50">Protected growing for better quality.</strong>{' '}
             <span className="text-white/70">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
@@ -154,15 +153,14 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
-          {/* L-connector: vertical line + junction dot + fading tick */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ width: '5vw', transform: 'translateX(-100%)' }}>
-            <div className="absolute left-full top-0 w-px h-2 bg-green-700/60" />
-            <div className="absolute left-full top-2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
-            <div className="absolute left-0 top-2 w-full h-px bg-gradient-to-l from-green-700/60 to-transparent" />
+          {/* Option C: tick → dot → badge (single visual flow) */}
+          <div className="absolute left-0 top-0 flex items-center pointer-events-none" style={{ paddingLeft: '5vw' }}>
+            <div className="absolute left-0 top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
+            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
+            <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
+              {blocks[2].tag}
+            </span>
           </div>
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
-            {blocks[2].tag}
-          </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
             <strong className="text-green-50">Proudly South African —</strong>{' '}
             <span className="text-white/70">every hand on this farm is local. Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
@@ -171,15 +169,14 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
-          {/* L-connector: vertical line + junction dot + fading tick */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ width: '5vw', transform: 'translateX(-100%)' }}>
-            <div className="absolute left-full top-0 w-px h-2 bg-green-700/60" />
-            <div className="absolute left-full top-2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
-            <div className="absolute left-0 top-2 w-full h-px bg-gradient-to-l from-green-700/60 to-transparent" />
+          {/* Option C: tick → dot → badge (single visual flow) */}
+          <div className="absolute left-0 top-0 flex items-center pointer-events-none" style={{ paddingLeft: '5vw' }}>
+            <div className="absolute left-0 top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
+            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
+            <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
+              {blocks[5].tag}
+            </span>
           </div>
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
-            {blocks[5].tag}
-          </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
             <strong className="text-green-50">Grown to your demand.</strong>{' '}
             <span className="text-white/70">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
