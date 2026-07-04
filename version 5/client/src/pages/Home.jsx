@@ -64,10 +64,8 @@ export default function Home() {
     const mainX = 3
     const isSmall = vpW < 640
     const bottomY = isSmall ? 75 : 65
-    const tickEnd = mainX + 7
     return {
       path: `${logoCx.toFixed(2)},${logoCy.toFixed(2)} ${logoCx.toFixed(2)},${bridgeY} ${mainX},${bridgeY} ${mainX},${bottomY}`,
-      tickX2: tickEnd,
       ticks: sideBlocks.map(b => b.tickY),
     }
   }, [vpW, vpH, sideBlocks])
@@ -120,7 +118,7 @@ export default function Home() {
           </div>
           {/* BACKGROUND TEXT — "Farming Made Better" watermark */}
           <p
-            className="absolute top-24 md:top-28 left-[185px] md:left-[250px] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
+            className="absolute top-24 md:top-28 left-[38vw] md:left-[33vw] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
             style={{
               fontWeight: 400,
               fontSize: '100px',
@@ -136,6 +134,7 @@ export default function Home() {
 
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[3].tag}
           </span>
@@ -147,6 +146,7 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[2].tag}
           </span>
@@ -158,6 +158,7 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[5].tag}
           </span>
@@ -175,13 +176,6 @@ export default function Home() {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <linearGradient id="tickFade" gradientUnits="userSpaceOnUse" x1="3" y1="0" x2="12" y2="0">
-            <stop offset="0%" stopColor="#2d6a3f" stopOpacity="1" />
-            <stop offset="60%" stopColor="#2d6a3f" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#2d6a3f" stopOpacity="0" />
-          </linearGradient>
-        </defs>
         <polyline
           points={connectorPoints.path}
           stroke="#1E4D2B"
@@ -191,15 +185,12 @@ export default function Home() {
           strokeLinejoin="round"
         />
         {connectorPoints.ticks.map((t) => (
-          <line
+          <circle
             key={t}
-            x1="3"
-            y1={t}
-            x2={connectorPoints.tickX2}
-            y2={t}
-            stroke="url(#tickFade)"
-            strokeWidth="1"
-            strokeLinecap="round"
+            cx="3"
+            cy={t}
+            r="0.6"
+            fill="#2d6a3f"
           />
         ))}
       </svg>
