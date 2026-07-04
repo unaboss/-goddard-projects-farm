@@ -67,6 +67,9 @@ export default function Home() {
     return {
       path: `${logoCx.toFixed(2)},${logoCy.toFixed(2)} ${logoCx.toFixed(2)},${bridgeY} ${mainX},${bridgeY} ${mainX},${bottomY}`,
       ticks: sideBlocks.map(b => b.tickY),
+      bridgeY,
+      mainX,
+      logoCx: (logoX / vpW) * 100,
     }
   }, [vpW, vpH, sideBlocks])
 
@@ -132,13 +135,10 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Gold connector — logo to first block */}
-        <div className="absolute left-6 md:left-10 top-[13%] w-px bg-gradient-to-b from-gold-400/60 to-gold-400/0 pointer-events-none" style={{ height: `${sideBlocks[0].top - 13}%` }} />
-
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
+          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
             {blocks[3].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
@@ -149,8 +149,8 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
+          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
             {blocks[2].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
@@ -161,8 +161,8 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
+          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
             {blocks[5].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
@@ -179,6 +179,16 @@ export default function Home() {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <defs>
+          <linearGradient id="goldFade" gradientUnits="userSpaceOnUse" x1="0" y1={connectorPoints.bridgeY} x2="0" y2={connectorPoints.ticks[0]}>
+            <stop offset="0%" stopColor="#C9922A" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#C9922A" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="goldFadeH" gradientUnits="userSpaceOnUse" x1={connectorPoints.logoCx} y1="0" x2={connectorPoints.mainX} y2="0">
+            <stop offset="0%" stopColor="#C9922A" stopOpacity="0" />
+            <stop offset="100%" stopColor="#C9922A" stopOpacity="0.8" />
+          </linearGradient>
+        </defs>
         <polyline
           points={connectorPoints.path}
           stroke="#1E4D2B"
@@ -187,14 +197,32 @@ export default function Home() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        <line
+          x1={connectorPoints.mainX}
+          y1={connectorPoints.bridgeY}
+          x2={connectorPoints.mainX}
+          y2={connectorPoints.ticks[0]}
+          stroke="url(#goldFade)"
+          strokeWidth="0.5"
+          strokeLinecap="round"
+        />
+        <line
+          x1={connectorPoints.logoCx}
+          y1={connectorPoints.bridgeY}
+          x2={connectorPoints.mainX}
+          y2={connectorPoints.bridgeY}
+          stroke="url(#goldFadeH)"
+          strokeWidth="0.5"
+          strokeLinecap="round"
+        />
         {connectorPoints.ticks.map((t) => (
           <circle
             key={t}
             cx="3"
             cy={t}
             r="1.2"
-            fill="#2d6a3f"
-            stroke="#2d6a3f"
+            fill="#15803d"
+            stroke="#15803d"
             strokeWidth="0.2"
           />
         ))}
