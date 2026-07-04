@@ -137,11 +137,8 @@ export default function Home() {
 
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
-          {/* Option C: tick → dot flowing into badge */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ marginLeft: '-5vw' }}>
-            <div className="absolute top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
-            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
-          </div>
+          {/* Connector: tick fades in from left */}
+          <div className="absolute left-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-transparent to-green-700/60" style={{ top: '0.5rem' }} />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[3].tag}
           </span>
@@ -153,11 +150,7 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
-          {/* Option C: tick → dot flowing into badge */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ marginLeft: '-5vw' }}>
-            <div className="absolute top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
-            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
-          </div>
+          <div className="absolute left-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-transparent to-green-700/60" style={{ top: '0.5rem' }} />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[2].tag}
           </span>
@@ -169,11 +162,7 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
-          {/* Option C: tick → dot flowing into badge */}
-          <div className="absolute left-0 top-0 pointer-events-none" style={{ marginLeft: '-5vw' }}>
-            <div className="absolute top-1/2 w-[5vw] h-px -translate-y-1/2 bg-gradient-to-r from-transparent to-green-700/60" />
-            <div className="absolute left-[5vw] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-green-700/60" />
-          </div>
+          <div className="absolute left-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-transparent to-green-700/60" style={{ top: '0.5rem' }} />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[5].tag}
           </span>

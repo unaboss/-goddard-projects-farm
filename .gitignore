@@ -3,3 +3,15 @@ dist/
 .env
 .DS_Store
 *.log
+
+# Exclude all versions except version 5
+/version 1/
+/version 2 and 3/
+/version 4/
+
+# Exclude old assets
+/Final images/
+
+# Exclude root screenshots
+*.png
+*.PNG
