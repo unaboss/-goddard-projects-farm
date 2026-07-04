@@ -50,7 +50,7 @@ export default function Home() {
     const isSmall = vpW < 640
     return [
       { blockIdx: 3, top: isSmall ? 22 : 22, tickY: 23.5 },
-      { blockIdx: 2, top: isSmall ? 48 : 40, tickY: isSmall ? 49.5 : 41.5 },
+      { blockIdx: 2, top: isSmall ? 47 : 40, tickY: isSmall ? 48.5 : 41.5 },
       { blockIdx: 5, top: isSmall ? 72 : 60, tickY: isSmall ? 73.5 : 61.5 },
     ]
   }, [vpW])
@@ -63,7 +63,7 @@ export default function Home() {
     const bridgeY = 14
     const mainX = 3
     const isSmall = vpW < 640
-    const bottomY = isSmall ? 75 : 65
+    const bottomY = isSmall ? 74 : 62
     return {
       path: `${logoCx.toFixed(2)},${logoCy.toFixed(2)} ${logoCx.toFixed(2)},${bridgeY} ${mainX},${bridgeY} ${mainX},${bottomY}`,
       ticks: sideBlocks.map(b => b.tickY),
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
           {/* BACKGROUND TEXT — "Farming Made Better" watermark */}
           <p
-            className="absolute top-24 md:top-28 left-[38vw] md:left-[33vw] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
+            className="absolute top-24 md:top-28 left-[36vw] md:left-[34vw] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
             style={{
               fontWeight: 400,
               fontSize: '100px',
@@ -132,9 +132,12 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Gold connector — logo to first block */}
+        <div className="absolute left-6 md:left-10 top-[13%] w-px bg-gradient-to-b from-gold-400/60 to-gold-400/0 pointer-events-none" style={{ height: `${sideBlocks[0].top - 13}%` }} />
+
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[3].tag}
           </span>
@@ -146,7 +149,7 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[2].tag}
           </span>
@@ -158,7 +161,7 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-600/60 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-800/60 to-transparent pointer-events-none" />
           <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
             {blocks[5].tag}
           </span>
@@ -189,8 +192,10 @@ export default function Home() {
             key={t}
             cx="3"
             cy={t}
-            r="0.6"
+            r="1.2"
             fill="#2d6a3f"
+            stroke="#2d6a3f"
+            strokeWidth="0.2"
           />
         ))}
       </svg>
