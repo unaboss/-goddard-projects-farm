@@ -137,8 +137,13 @@ export default function Home() {
 
         {/* #1 top-left block */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
+          {/* L-connector: tick → junction dot → vertical line */}
+          <div className="absolute left-0 top-2 pointer-events-none">
+            <div className="absolute left-0 top-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent" />
+            <div className="absolute left-0 top-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
+            <div className="absolute left-0 w-px bg-green-700/60" style={{ bottom: '100%', height: '0.5rem' }} />
+          </div>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[3].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
@@ -149,8 +154,13 @@ export default function Home() {
 
         {/* #3 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
+          {/* L-connector: tick → junction dot → vertical line */}
+          <div className="absolute left-0 top-2 pointer-events-none">
+            <div className="absolute left-0 top-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent" />
+            <div className="absolute left-0 top-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
+            <div className="absolute left-0 w-px bg-green-700/60" style={{ bottom: '100%', height: '0.5rem' }} />
+          </div>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[2].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
@@ -161,8 +171,13 @@ export default function Home() {
 
         {/* #6 — left side column */}
         <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
-          <div className="absolute left-0 top-2 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent pointer-events-none" />
-          <span className="block w-full text-center border-l-2 border-green-700/60 bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-r-full pl-3 pr-2 py-0.5 mb-2">
+          {/* L-connector: tick → junction dot → vertical line */}
+          <div className="absolute left-0 top-2 pointer-events-none">
+            <div className="absolute left-0 top-0 -translate-x-full w-[5vw] h-px bg-gradient-to-r from-green-700/60 to-transparent" />
+            <div className="absolute left-0 top-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-green-700/60" />
+            <div className="absolute left-0 w-px bg-green-700/60" style={{ bottom: '100%', height: '0.5rem' }} />
+          </div>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 mb-2">
             {blocks[5].tag}
           </span>
           <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
