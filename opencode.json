@@ -15,8 +15,9 @@
         "baseURL": "http://127.0.0.1:11434/v1"
       },
       "models": {
-        "llama3.2-vision": {
-          "name": "Llama 3.2 Vision 11B"
+        "groundnext-vision": {
+          "name": "GroundNext 7B Vision",
+          "id": "hf.co/mradermacher/GroundNext-7B-V0-GGUF:Q6_K"
         }
       }
     }
@@ -25,7 +26,7 @@
     "vision": {
       "description": "Use when reading or analyzing images, screenshots, or photos. Uses OpenCode Eyesight (local).",
       "mode": "subagent",
-      "model": "eyesight/llama3.2-vision"
+      "model": "eyesight/groundnext-vision"
     }
   }
 }

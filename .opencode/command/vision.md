@@ -7,7 +7,7 @@ Run this PowerShell command to analyze $ARGUMENTS, then display the result to th
 ```powershell
 $img = [Convert]::ToBase64String([IO.File]::ReadAllBytes("$ARGUMENTS"))
 $body = @{
-  model = "llama3.2-vision:11b"
+  model = "hf.co/mradermacher/GroundNext-7B-V0-GGUF:Q6_K"
   messages = @(@{role="user"; content="Describe what you see in this image. Be detailed but concise."; images=@($img)})
   stream = $false
 } | ConvertTo-Json -Depth 4

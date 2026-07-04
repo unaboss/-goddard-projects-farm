@@ -46,6 +46,15 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [next])
 
+  const sideBlocks = useMemo(() => {
+    const isSmall = vpW < 640
+    return [
+      { blockIdx: 3, top: isSmall ? 22 : 22, tickY: 23.5 },
+      { blockIdx: 2, top: isSmall ? 48 : 40, tickY: isSmall ? 49.5 : 41.5 },
+      { blockIdx: 5, top: isSmall ? 72 : 60, tickY: isSmall ? 73.5 : 61.5 },
+    ]
+  }, [vpW])
+
   const connectorPoints = useMemo(() => {
     const logoX = vpW >= 768 ? 72 : 52
     const logoY = vpW >= 768 ? 74 : 62
@@ -53,13 +62,15 @@ export default function Home() {
     const logoCy = (logoY / vpH) * 100
     const bridgeY = 14
     const mainX = 3
-    const bottomY = 65
-    const tickEnd = mainX + 1.5
+    const isSmall = vpW < 640
+    const bottomY = isSmall ? 75 : 65
+    const tickEnd = mainX + 7
     return {
       path: `${logoCx.toFixed(2)},${logoCy.toFixed(2)} ${logoCx.toFixed(2)},${bridgeY} ${mainX},${bridgeY} ${mainX},${bottomY}`,
       tickX2: tickEnd,
+      ticks: sideBlocks.map(b => b.tickY),
     }
-  }, [vpW, vpH])
+  }, [vpW, vpH, sideBlocks])
 
   return (
     <>
@@ -87,48 +98,90 @@ export default function Home() {
         }}
       />
 
-      {/* Logo Lockup — top-left */}
-      <div className="absolute top-0 left-0 z-20 pt-6 md:pt-8 px-6 md:px-10">
-        <div className="flex items-start gap-2.5">
-          <img
-            src="/images/symbol-logo.png"
-            alt="Goddard Projects Farm"
-            className="w-14 h-14 md:w-16 md:h-16 object-contain"
-          />
-          <div className="w-px h-14 md:h-16 bg-gradient-to-b from-gold-400/80 to-transparent rounded-full mt-1" />
-          <div className="leading-none mt-4">
-            <span className="block text-white font-normal text-sm md:text-base tracking-wide font-bebas text-shadow">
-              Goddard Projects
-            </span>
-            <span className="block text-gold-400 font-bold text-[10px] md:text-xs -mt-0.5 font-bebas text-shadow">
-              Farm
-            </span>
+      {/* Left column — logo + text blocks grouped */}
+      <div className="absolute inset-y-0 left-0 z-20 w-[clamp(170px,35vw,260px)]">
+        {/* Logo Lockup — top-left */}
+        <div className="pt-6 md:pt-8 px-6 md:px-10">
+          <div className="flex items-start gap-2.5">
+            <img
+              src="/images/symbol-logo.png"
+              alt="Goddard Projects Farm"
+              className="w-14 h-14 md:w-16 md:h-16 object-contain"
+            />
+            <div className="w-px h-14 md:h-16 bg-gradient-to-b from-gold-400/80 to-transparent rounded-full mt-1" />
+            <div className="leading-none mt-4">
+              <span className="block text-white font-normal text-sm md:text-base tracking-wide font-bebas text-shadow">
+                Goddard Projects
+              </span>
+              <span className="block text-gold-400 font-bold text-[10px] md:text-xs -mt-0.5 font-bebas text-shadow">
+                Farm
+              </span>
+            </div>
           </div>
+          {/* BACKGROUND TEXT — "Farming Made Better" watermark */}
+          <p
+            className="absolute top-24 md:top-28 left-[185px] md:left-[250px] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
+            style={{
+              fontWeight: 400,
+              fontSize: '100px',
+              lineHeight: 0.78,
+              color: '#ffffff',
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
+              maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
+            }}
+          >
+            Farming<br />Made<br />Better
+          </p>
         </div>
-        {/* BACKGROUND TEXT — "Farming Made Better" watermark */}
-        <p
-          className="absolute top-24 md:top-28 left-[185px] md:left-[250px] font-bebas uppercase text-shadow tracking-[2px] opacity-[0.3] pointer-events-none select-none z-[1]"
-          style={{
-            fontWeight: 400,
-            fontSize: '100px',
-            lineHeight: 0.78,
-            color: '#ffffff',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
-            maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',
-          }}
-        >
-          Farming<br />Made<br />Better
-        </p>
+
+        {/* #1 top-left block */}
+        <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[0].top}%` }}>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+            {blocks[3].tag}
+          </span>
+          <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
+            <strong className="text-green-50">Protected growing for better quality.</strong>{' '}
+            <span className="text-white/70">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
+          </p>
+        </div>
+
+        {/* #3 — left side column */}
+        <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[1].top}%` }}>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+            {blocks[2].tag}
+          </span>
+          <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
+            <strong className="text-green-50">Proudly South African —</strong>{' '}
+            <span className="text-white/70">every hand on this farm is local. Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
+          </p>
+        </div>
+
+        {/* #6 — left side column */}
+        <div className="absolute left-0 w-full px-6 md:px-10" style={{ top: `${sideBlocks[2].top}%` }}>
+          <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
+            {blocks[5].tag}
+          </span>
+          <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
+            <strong className="text-green-50">Grown to your demand.</strong>{' '}
+            <span className="text-white/70">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
+          </p>
+        </div>
       </div>
 
       {/* Connector lines — continuous SVG pathway */}
       <svg
-        className="absolute top-0 left-0 z-10 w-full h-full pointer-events-none"
+        className="absolute top-0 left-0 z-[15] w-full h-full pointer-events-none"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Continuous path: logo column → horizontal bridge → main vertical line */}
+        <defs>
+          <linearGradient id="tickFade" gradientUnits="userSpaceOnUse" x1="3" y1="0" x2="12" y2="0">
+            <stop offset="0%" stopColor="#2d6a3f" stopOpacity="1" />
+            <stop offset="60%" stopColor="#2d6a3f" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#2d6a3f" stopOpacity="0" />
+          </linearGradient>
+        </defs>
         <polyline
           points={connectorPoints.path}
           stroke="#1E4D2B"
@@ -137,42 +190,19 @@ export default function Home() {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/* Tick marks branching from vertical line toward left blocks */}
-        {[23.5, 41.5, 61.5].map((t) => (
+        {connectorPoints.ticks.map((t) => (
           <line
             key={t}
             x1="3"
             y1={t}
             x2={connectorPoints.tickX2}
             y2={t}
-            stroke="#1E4D2B"
-            strokeWidth="0.8"
+            stroke="url(#tickFade)"
+            strokeWidth="1"
             strokeLinecap="round"
           />
         ))}
       </svg>
-
-      {/* #1 top-left block */}
-      <div className="absolute top-[22%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
-          {blocks[3].tag}
-        </span>
-        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
-          <strong className="text-green-50">Protected growing for better quality.</strong>{' '}
-          <span className="text-white/70">Year-round consistency from our shade‑net system — cleaner crops, reliable supply.</span>
-        </p>
-      </div>
-
-      {/* #3 — left side column */}
-      <div className="absolute top-[40%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
-          {blocks[2].tag}
-        </span>
-        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
-          <strong className="text-green-50">Proudly South African —</strong>{' '}
-          <span className="text-white/70">every hand on this farm is local. Our supply chain creates jobs, builds skills, and strengthens the local community.</span>
-        </p>
-      </div>
 
       {/* #4 HEADLINE — center, large */}
       <div className="absolute top-[42%] left-[62%] md:left-[60%] -translate-x-1/2 z-20 max-w-[360px] md:max-w-[640px] text-left">
@@ -192,17 +222,6 @@ export default function Home() {
             BBBEE Level 1
           </span>
         </div>
-      </div>
-
-      {/* #6 — left side column */}
-      <div className="absolute top-[60%] left-[5%] sm:left-[4%] z-20 max-w-[clamp(130px,26vw,200px)]">
-        <span className="block w-full text-center bg-green-900/40 text-green-300 text-[10px] md:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2">
-          {blocks[5].tag}
-        </span>
-        <p className="text-[clamp(10px,1.8vw,12px)] leading-snug tracking-wide text-shadow">
-          <strong className="text-green-50">Grown to your demand.</strong>{' '}
-          <span className="text-white/70">We plan planting cycles around what you need — fresh produce when your business requires it.</span>
-        </p>
       </div>
 
       {/* Arrows */}
